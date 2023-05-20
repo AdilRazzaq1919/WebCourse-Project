@@ -1,12 +1,18 @@
 const express=require('express');
 const mongoose=require ('mongoose');
 require("dotenv").config();
-const router=require('./Routes/userRoutes')
+const adminRoute=require('./Routes/adminRoutes')
+const sellerRoute=require('./Routes/sellerRoutes')
+const customerRoute=require('./Routes/customerRoutes')
+
 
 const app=express();
 app.use(express.json())
 
-app.use('/user', router)
+app.use('/admin', adminRoute)
+app.use('/seller',sellerRoute)
+app.use('/customer',customerRoute)
+
 
 const database= process.env.DB;
 mongoose.connect(database,{
