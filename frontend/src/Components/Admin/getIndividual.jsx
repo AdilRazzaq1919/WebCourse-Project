@@ -49,9 +49,11 @@ const IndividualAdmin = () => {
                     <i className="fas fa-home"></i>
                   </button>
                 </Link>
-                <button className='btn btn-primary mx-2'>
-                  <i className="fas fa-pen"></i>
-                </button>
+                <Link to={`/UpdateAdmin/${getuserData._id}`}>
+                  <button className='btn btn-primary mx-2'>
+                    <i className="fas fa-pen"></i>
+                  </button>
+                </Link>
 
                 <button className='btn btn-danger' onClick={() => deleteData(getuserData._id)}>
                   <i className="fas fa-trash"></i>

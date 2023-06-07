@@ -44,14 +44,15 @@ const AdminUser = () => {
         <td>{element.phoneNumber}</td>
         <td className="d-flex justify-content-between">
           <Link to={`/IndividualAdmin/${element._id}`}>
-            <button className="btn btn-success">
-              <i className="fas fa-eye"></i>
-            </button>
+              <button className="btn btn-success">
+                <i className="fas fa-eye"></i>
+              </button>
           </Link>
-
-          <button className="btn btn-primary">
-            <i className="fas fa-pen"></i>
-          </button>
+          <Link to={`/UpdateAdmin/${element._id}`}>
+              <button className="btn btn-primary">
+                <i className="fas fa-pen"></i>
+              </button>
+          </Link>
           <button
             className="btn btn-danger"
             onClick={() => deleteData(element._id)}
