@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../Admin/style.css';
+
+
 
 const AdminUser = () => {
   const [getuserData, setUserData] = useState([]);
@@ -65,22 +68,24 @@ const AdminUser = () => {
   };
 
   return (
-    <div className="mt-5">
-      <div className="container">
-        <table className="table">
-          <thead>
-            <tr className="table-dark">
-              <th scope="col">ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone Number</th>
-              <th scope="col">CRUD</th>
-            </tr>
-          </thead>
-          <tbody>{mapping()}</tbody>
-        </table>
+    <section className='bodysection'>
+      <div className="admin">
+        <div className="container">
+          <table className="table">
+            <thead>
+              <tr className="table-dark">
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">CRUD</th>
+              </tr>
+            </thead>
+            <tbody>{mapping()}</tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

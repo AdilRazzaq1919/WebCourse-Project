@@ -5,6 +5,7 @@ import logo from '../Images/3.jpg';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../Admin/style.css';
 
 const IndividualAdmin = () => {
   const navigate = useNavigate();
@@ -36,13 +37,13 @@ const IndividualAdmin = () => {
   };
 
   return (
-    <div className='container mt-3'>
+    <div className='container'>
       {getuserData ? (
         <>
           <h1 style={{ fontWeight: 400 }}>Welcome {getuserData.name}</h1>
 
-          <Card sx={{ minWidth: 275 }}>
-            <CardContent>
+          <Card  sx={{ minWidth: 275 }} >
+            <CardContent className='card'>
               <div className='add_btn'>
                 <Link to='/AdminUser'>
                   <button className='btn btn-dark mx-2'>

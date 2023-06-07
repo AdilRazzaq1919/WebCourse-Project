@@ -57,7 +57,7 @@ const UpdateAdmin=()=>{
   return(
     <MDBContainer fluid>
 
-    <MDBCard className='text-black m-5' style={{borderRadius: '25px'}}>
+    <MDBCard className='text-black m-5 mt-5 admin' style={{borderRadius: '25px'}}>
       <MDBCardBody>
         <MDBRow>
           <MDBCol md='10' lg='6' className='order-2 order-lg-1 d-flex flex-column align-items-center'>

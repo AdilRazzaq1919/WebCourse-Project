@@ -90,7 +90,7 @@ const  Login=()=> {
                </div>
 
               <div>
-                <p className="mb-0">Don't have an account?  <Link to='/register'>Sign Up</Link></p>
+                <p className="mb-0">Don't have an account?  <Link to='/SignUp'>Sign Up</Link></p>
               </div>
         
         </MDBCol>
