@@ -5,12 +5,12 @@ import '../style.css';
 
 
 
-const AdminUser = () => {
+const SellerUser = () => {
   const [getuserData, setUserData] = useState([]);
 
   const displayData = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/admin/getAdmin');
+      const response = await axios.get('http://localhost:3001/seller/getSeller');
       setUserData(response.data);
     } catch (error) {
       console.error('Error fetching user data:', error);
@@ -19,7 +19,7 @@ const AdminUser = () => {
 
   const deleteData = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/admin/deleteAdmin/${id}`);
+      await axios.delete(`http://localhost:3001/seller/deleteSeller/${id}`);
       displayData();
     } catch (error) {
       console.error('Error deleting user data:', error);
@@ -42,16 +42,16 @@ const AdminUser = () => {
     return getuserData.map((element, id) => (
       <tr key={id}>
         <th scope="row">{id + 1}</th>
-        <td>{element.name}</td>
+        <td>{element.firstName}</td>
+        <td>{element.lastName}</td>
         <td>{element.email}</td>
-        <td>{element.phoneNumber}</td>
         <td className="d-flex justify-content-between">
-          <Link to={`/IndividualAdmin/${element._id}`}>
+          <Link to={`/IndividualSeller/${element._id}`}>
               <button className="btn btn-success">
                 <i className="fas fa-eye"></i>
               </button>
           </Link>
-          <Link to={`/UpdateAdmin/${element._id}`}>
+          <Link to={`/UpdateSeller/${element._id}`}>
               <button className="btn btn-primary">
                 <i className="fas fa-pen"></i>
               </button>
@@ -75,9 +75,9 @@ const AdminUser = () => {
             <thead>
               <tr className="table-dark">
                 <th scope="col">ID</th>
-                <th scope="col">Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Phone Number</th>
                 <th scope="col">CRUD</th>
               </tr>
             </thead>
@@ -89,4 +89,4 @@ const AdminUser = () => {
   );
 };
 
-export default AdminUser;
+export default SellerUser;

@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../style.css';
 
-const IndividualAdmin = () => {
+const IndividualSeller = () => {
   const navigate = useNavigate();
   const [getuserData, setUserData] = useState(null);
 
@@ -16,10 +16,10 @@ const IndividualAdmin = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/admin/getIndividualAdmin/${id}`);
+        const response = await axios.get(`http://localhost:3001/seller/getIndividualSeller/${id}`);
         setUserData(response.data);
       } catch (error) {
-        console.error('Error retrieving admin data:', error);
+        console.error('Error retrieving Seller data:', error);
       }
     };
   
@@ -29,10 +29,10 @@ const IndividualAdmin = () => {
 
   const deleteData = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/admin/deleteAdmin/${id}`);
-      navigate('/AdminUser');
+      await axios.delete(`http://localhost:3001/seller/deleteSeller/${id}`);
+      navigate('/SellerUser');
     } catch (error) {
-      console.error('Error deleting admin:', error);
+      console.error('Error deleting Seller:', error);
     }
   };
 
@@ -45,12 +45,12 @@ const IndividualAdmin = () => {
           <Card  sx={{ minWidth: 275 }} >
             <CardContent className='card'>
               <div className='add_btn'>
-                <Link to='/AdminUser'>
+                <Link to='/SellerUser'>
                   <button className='btn btn-dark mx-2'>
                     <i className="fas fa-home"></i>
                   </button>
                 </Link>
-                <Link to={`/UpdateAdmin/${getuserData._id}`}>
+                <Link to={`/UpdateSeller/${getuserData._id}`}>
                   <button className='btn btn-primary mx-2'>
                     <i className="fas fa-pen"></i>
                   </button>
@@ -62,9 +62,9 @@ const IndividualAdmin = () => {
               </div>
               <div className='row'>
                 <div className='left_view col-lg-6 col-mg-6 col-12 mt-5'>
-                  <h3><i className="fa-solid fa-user"></i>    Name: <span style={{ fontWeight: 400, fontSize: 24 }}>{getuserData.name}</span></h3>
-                  <h3><i className="fa-solid fa-envelope"></i>    Email: <span style={{ fontWeight: 400, fontSize: 24 }}>{getuserData.email}</span></h3>
-                  <h3><i className="fa-solid fa-phone"></i>    Contact:  <span style={{ fontWeight: 400, fontSize: 24 }}>{getuserData.phoneNumber}</span> </h3>
+                  <h3><i className="fa-solid fa-user"></i>    First Name: <span style={{ fontWeight: 400, fontSize: 24 }}>{getuserData.firstName}</span></h3>
+                  <h3><i className="fa-solid fa-user"></i>    Last Name: <span style={{ fontWeight: 400, fontSize: 24 }}>{getuserData.laststName}</span></h3>
+                  <h3><i className="fa-solid fa-envelope"></i> Email: <span style={{ fontWeight: 400, fontSize: 24 }}>{getuserData.email}</span></h3>
                 </div>
                 <div className='right_view col-lg-6 col-mg-6 col-12' >
                   <img src={logo} style={{ height: 350, width: 400 }} alt="logo" />
@@ -80,4 +80,4 @@ const IndividualAdmin = () => {
   );
 };
 
-export default IndividualAdmin;
+export default IndividualSeller;

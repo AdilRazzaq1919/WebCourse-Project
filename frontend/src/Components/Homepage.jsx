@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom"
 
-import logo from '../Images/1.jpg'
-import logo1 from '../Images/4.png'
-import logo2 from '../Images/5.png'
+import logo from './Images/1.jpg'
+import logo1 from './Images/4.png'
+import logo2 from './Images/5.png'
 
 
-import '../Admin/style.css'
+import './style.css';
 const Home = () => {
   return (
     <div className="body">
