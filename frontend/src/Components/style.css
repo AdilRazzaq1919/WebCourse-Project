@@ -196,7 +196,7 @@ header.sticky{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,auto));
     align-items: center;
-    gap: 2.5rem;
+    gap: 4rem;
     margin-top: 5rem;
 }
 .courses-content{
@@ -218,6 +218,15 @@ header.sticky{
     cursor: pointer;
   }
 
+.box h3 .link{
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--main-color);
+    margin-bottom: 15px;
+
+
+}
 .box h3{
     padding-top: 10px;
     font-size: 24px;

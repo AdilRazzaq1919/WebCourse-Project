@@ -11,6 +11,11 @@ import SellerUser from './Components/Seller/SellerUser'
 import IndividualSeller from './Components/Seller/IndividualSeller'
 import UpdateSeller from './Components/Seller/updateSeller'
 
+
+import SellerProducts from './Components/SellerProducts/MenProducts'
+import UpdateProducts from './Components/SellerProducts/updateproduct'
+
+
 import Home from './Components/Homepage'
 import Navbar from './Components/navbar'
 
@@ -31,6 +36,10 @@ const App=()=>{
           <Route  path='/SellerUser' element={<SellerUser/>}/>
           <Route  path='/IndividualSeller/:id' element={<IndividualSeller/>}/>
           <Route  path='/UpdateSeller/:id' element={<UpdateSeller/>}/>
+
+
+          <Route  path='/SellerProducts' element={<SellerProducts/>}/>
+          <Route  path='/UpdateProducts/:id' element={<UpdateProducts/>}/>
 
 
           

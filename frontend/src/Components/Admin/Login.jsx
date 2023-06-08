@@ -34,9 +34,9 @@ const  Login=()=> {
       password:user.password,
       
     }
-    console.log(obj)
     axios.post('http://localhost:3001/admin/login',obj)
     .then(res=>{
+      localStorage.setItem('token',res.data.token);
       window.alert(" Login Successfully")
       navigate('/AdminUser')
     }).catch(function (error) {

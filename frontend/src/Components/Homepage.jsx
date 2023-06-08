@@ -77,7 +77,7 @@ const Home = () => {
         </div>
         <div className="courses-content">
           <div className="box">
-            <h3>Men</h3>
+          <h3><Link to="/SellerProducts" className="link">Men</Link></h3>
             <ol>
               <li><strong>1: </strong>Shirts</li>
               <li><strong>2: </strong>T-Shirts</li>

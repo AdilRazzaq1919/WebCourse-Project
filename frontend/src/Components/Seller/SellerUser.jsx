@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../style.css';
 
 
 
 const SellerUser = () => {
+  const navigate=new useNavigate();
   const [getuserData, setUserData] = useState([]);
 
   const displayData = async () => {
@@ -27,6 +28,9 @@ const SellerUser = () => {
   };
 
   useEffect(() => {
+    if(localStorage.getItem('token')===null){
+      navigate('/Login')
+    }
     displayData();
   }, []);
 
